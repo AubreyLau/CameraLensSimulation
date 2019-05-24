@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0419758E2297430200BB9285 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419758D2297430200BB9285 /* AppDelegate.m */; };
-		041975912297430200BB9285 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041975902297430200BB9285 /* ViewController.m */; };
 		041975932297430500BB9285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041975922297430500BB9285 /* Assets.xcassets */; };
 		041975962297430500BB9285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041975942297430500BB9285 /* Main.storyboard */; };
-		041975992297430500BB9285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 041975982297430500BB9285 /* main.m */; };
 		041975A42297430500BB9285 /* CameraLensSimulationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 041975A32297430500BB9285 /* CameraLensSimulationTests.m */; };
 		041975AF2297430500BB9285 /* CameraLensSimulationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 041975AE2297430500BB9285 /* CameraLensSimulationUITests.m */; };
+		041975C22297475100BB9285 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 041975C12297475100BB9285 /* glad.c */; };
+		041975C3229749C700BB9285 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041975BD2297465100BB9285 /* OpenGL.framework */; };
+		041975CB22974B2800BB9285 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041975CA22974B2800BB9285 /* test.cpp */; };
+		041975D32297505800BB9285 /* includes in Resources */ = {isa = PBXBuildFile; fileRef = 041975D22297505700BB9285 /* includes */; };
+		041975D42297666800BB9285 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 041975C422974ADC00BB9285 /* libglfw.3.3.dylib */; };
+		041975D52297667700BB9285 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 041975C622974AF200BB9285 /* libGLEW.2.1.0.dylib */; };
+		041975D72297673000BB9285 /* libSTB_IMAGE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 041975D62297673000BB9285 /* libSTB_IMAGE.a */; };
+		041975D92297679500BB9285 /* shader in Resources */ = {isa = PBXBuildFile; fileRef = 041975D82297679500BB9285 /* shader */; };
+		041975DB229767B500BB9285 /* resources in Resources */ = {isa = PBXBuildFile; fileRef = 041975DA229767B400BB9285 /* resources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +41,9 @@
 
 /* Begin PBXFileReference section */
 		041975892297430200BB9285 /* CameraLensSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraLensSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0419758C2297430200BB9285 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0419758D2297430200BB9285 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0419758F2297430200BB9285 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		041975902297430200BB9285 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		041975922297430500BB9285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041975952297430500BB9285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		041975972297430500BB9285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		041975982297430500BB9285 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0419759A2297430500BB9285 /* CameraLensSimulation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CameraLensSimulation.entitlements; sourceTree = "<group>"; };
 		0419759F2297430500BB9285 /* CameraLensSimulationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraLensSimulationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041975A32297430500BB9285 /* CameraLensSimulationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraLensSimulationTests.m; sourceTree = "<group>"; };
@@ -50,6 +51,18 @@
 		041975AA2297430500BB9285 /* CameraLensSimulationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraLensSimulationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041975AE2297430500BB9285 /* CameraLensSimulationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraLensSimulationUITests.m; sourceTree = "<group>"; };
 		041975B02297430500BB9285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		041975BD2297465100BB9285 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		041975BF2297466200BB9285 /* libgssapi_krb5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgssapi_krb5.tbd; path = usr/lib/libgssapi_krb5.tbd; sourceTree = SDKROOT; };
+		041975C12297475100BB9285 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../Downloads/glad/src/glad.c; sourceTree = "<group>"; };
+		041975C422974ADC00BB9285 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		041975C622974AF200BB9285 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		041975C822974B0400BB9285 /* libassimp.4.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.4.1.0.dylib; path = ../../../../usr/local/Cellar/assimp/4.1.0/lib/libassimp.4.1.0.dylib; sourceTree = "<group>"; };
+		041975CA22974B2800BB9285 /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		041975D022974FC900BB9285 /* assimp.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = assimp.lib; path = CameraLensSimulation/lib/assimp.lib; sourceTree = "<group>"; };
+		041975D22297505700BB9285 /* includes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = includes; sourceTree = "<group>"; };
+		041975D62297673000BB9285 /* libSTB_IMAGE.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSTB_IMAGE.a; path = CameraLensSimulation/build/libSTB_IMAGE.a; sourceTree = "<group>"; };
+		041975D82297679500BB9285 /* shader */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shader; sourceTree = "<group>"; };
+		041975DA229767B400BB9285 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +70,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041975D42297666800BB9285 /* libglfw.3.3.dylib in Frameworks */,
+				041975D52297667700BB9285 /* libGLEW.2.1.0.dylib in Frameworks */,
+				041975D72297673000BB9285 /* libSTB_IMAGE.a in Frameworks */,
+				041975C3229749C700BB9285 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +101,7 @@
 				041975A22297430500BB9285 /* CameraLensSimulationTests */,
 				041975AD2297430500BB9285 /* CameraLensSimulationUITests */,
 				0419758A2297430200BB9285 /* Products */,
+				041975BC2297465100BB9285 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,14 +118,14 @@
 		0419758B2297430200BB9285 /* CameraLensSimulation */ = {
 			isa = PBXGroup;
 			children = (
-				0419758C2297430200BB9285 /* AppDelegate.h */,
-				0419758D2297430200BB9285 /* AppDelegate.m */,
-				0419758F2297430200BB9285 /* ViewController.h */,
-				041975902297430200BB9285 /* ViewController.m */,
+				041975DA229767B400BB9285 /* resources */,
+				041975D82297679500BB9285 /* shader */,
+				041975D22297505700BB9285 /* includes */,
+				041975CA22974B2800BB9285 /* test.cpp */,
+				041975C12297475100BB9285 /* glad.c */,
 				041975922297430500BB9285 /* Assets.xcassets */,
 				041975942297430500BB9285 /* Main.storyboard */,
 				041975972297430500BB9285 /* Info.plist */,
-				041975982297430500BB9285 /* main.m */,
 				0419759A2297430500BB9285 /* CameraLensSimulation.entitlements */,
 			);
 			path = CameraLensSimulation;
@@ -129,6 +147,20 @@
 				041975B02297430500BB9285 /* Info.plist */,
 			);
 			path = CameraLensSimulationUITests;
+			sourceTree = "<group>";
+		};
+		041975BC2297465100BB9285 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				041975D62297673000BB9285 /* libSTB_IMAGE.a */,
+				041975D022974FC900BB9285 /* assimp.lib */,
+				041975C822974B0400BB9285 /* libassimp.4.1.0.dylib */,
+				041975C622974AF200BB9285 /* libGLEW.2.1.0.dylib */,
+				041975C422974ADC00BB9285 /* libglfw.3.3.dylib */,
+				041975BF2297466200BB9285 /* libgssapi_krb5.tbd */,
+				041975BD2297465100BB9285 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				041975932297430500BB9285 /* Assets.xcassets in Resources */,
+				041975D92297679500BB9285 /* shader in Resources */,
+				041975DB229767B500BB9285 /* resources in Resources */,
+				041975D32297505800BB9285 /* includes in Resources */,
 				041975962297430500BB9285 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,9 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041975912297430200BB9285 /* ViewController.m in Sources */,
-				041975992297430500BB9285 /* main.m in Sources */,
-				0419758E2297430200BB9285 /* AppDelegate.m in Sources */,
+				041975C22297475100BB9285 /* glad.c in Sources */,
+				041975CB22974B2800BB9285 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,10 +461,25 @@
 				CODE_SIGN_ENTITLEMENTS = CameraLensSimulation/CameraLensSimulation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/assimp/4.1.0/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = CameraLensSimulation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/assimp/4.1.0/lib,
+					"$(PROJECT_DIR)/CameraLensSimulation/lib",
+					"$(PROJECT_DIR)/CameraLensSimulation/build",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Identifier.CameraLensSimulation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,10 +493,25 @@
 				CODE_SIGN_ENTITLEMENTS = CameraLensSimulation/CameraLensSimulation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/assimp/4.1.0/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = CameraLensSimulation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/assimp/4.1.0/lib,
+					"$(PROJECT_DIR)/CameraLensSimulation/lib",
+					"$(PROJECT_DIR)/CameraLensSimulation/build",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Identifier.CameraLensSimulation;
 				PRODUCT_NAME = "$(TARGET_NAME)";

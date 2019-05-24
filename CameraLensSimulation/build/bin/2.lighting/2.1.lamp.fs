@@ -1,0 +1,1 @@
+/Users/mac/Desktop/openglTest/openglTest/src/2.lighting/2.1.basic_lighting_diffuse/2.1.lamp.fs
