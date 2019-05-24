@@ -11,7 +11,6 @@
 		041975962297430500BB9285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041975942297430500BB9285 /* Main.storyboard */; };
 		041975A42297430500BB9285 /* CameraLensSimulationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 041975A32297430500BB9285 /* CameraLensSimulationTests.m */; };
 		041975AF2297430500BB9285 /* CameraLensSimulationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 041975AE2297430500BB9285 /* CameraLensSimulationUITests.m */; };
-		041975C22297475100BB9285 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 041975C12297475100BB9285 /* glad.c */; };
 		041975C3229749C700BB9285 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041975BD2297465100BB9285 /* OpenGL.framework */; };
 		041975CB22974B2800BB9285 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041975CA22974B2800BB9285 /* test.cpp */; };
 		041975D32297505800BB9285 /* includes in Resources */ = {isa = PBXBuildFile; fileRef = 041975D22297505700BB9285 /* includes */; };
@@ -20,6 +19,7 @@
 		041975D72297673000BB9285 /* libSTB_IMAGE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 041975D62297673000BB9285 /* libSTB_IMAGE.a */; };
 		041975D92297679500BB9285 /* shader in Resources */ = {isa = PBXBuildFile; fileRef = 041975D82297679500BB9285 /* shader */; };
 		041975DB229767B500BB9285 /* resources in Resources */ = {isa = PBXBuildFile; fileRef = 041975DA229767B400BB9285 /* resources */; };
+		04A8E74F22977454006BBD0E /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E74E22977454006BBD0E /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		041975B02297430500BB9285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		041975BD2297465100BB9285 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		041975BF2297466200BB9285 /* libgssapi_krb5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgssapi_krb5.tbd; path = usr/lib/libgssapi_krb5.tbd; sourceTree = SDKROOT; };
-		041975C12297475100BB9285 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../Downloads/glad/src/glad.c; sourceTree = "<group>"; };
 		041975C422974ADC00BB9285 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		041975C622974AF200BB9285 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		041975C822974B0400BB9285 /* libassimp.4.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.4.1.0.dylib; path = ../../../../usr/local/Cellar/assimp/4.1.0/lib/libassimp.4.1.0.dylib; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		041975D62297673000BB9285 /* libSTB_IMAGE.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSTB_IMAGE.a; path = CameraLensSimulation/build/libSTB_IMAGE.a; sourceTree = "<group>"; };
 		041975D82297679500BB9285 /* shader */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shader; sourceTree = "<group>"; };
 		041975DA229767B400BB9285 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		04A8E74E22977454006BBD0E /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 				041975D82297679500BB9285 /* shader */,
 				041975D22297505700BB9285 /* includes */,
 				041975CA22974B2800BB9285 /* test.cpp */,
-				041975C12297475100BB9285 /* glad.c */,
+				04A8E74E22977454006BBD0E /* glad.c */,
 				041975922297430500BB9285 /* Assets.xcassets */,
 				041975942297430500BB9285 /* Main.storyboard */,
 				041975972297430500BB9285 /* Info.plist */,
@@ -295,8 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041975C22297475100BB9285 /* glad.c in Sources */,
 				041975CB22974B2800BB9285 /* test.cpp in Sources */,
+				04A8E74F22977454006BBD0E /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
