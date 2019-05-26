@@ -20,6 +20,7 @@
 		041975D92297679500BB9285 /* shader in Resources */ = {isa = PBXBuildFile; fileRef = 041975D82297679500BB9285 /* shader */; };
 		041975DB229767B500BB9285 /* resources in Resources */ = {isa = PBXBuildFile; fileRef = 041975DA229767B400BB9285 /* resources */; };
 		04A8E74F22977454006BBD0E /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E74E22977454006BBD0E /* glad.c */; };
+		04A8E751229847D5006BBD0E /* libassimp.4.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A8E750229847D5006BBD0E /* libassimp.4.1.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		041975D82297679500BB9285 /* shader */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shader; sourceTree = "<group>"; };
 		041975DA229767B400BB9285 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 		04A8E74E22977454006BBD0E /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		04A8E750229847D5006BBD0E /* libassimp.4.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.4.1.0.dylib; path = ../../../../../usr/local/Cellar/assimp/4.1.0/lib/libassimp.4.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			files = (
 				041975D42297666800BB9285 /* libglfw.3.3.dylib in Frameworks */,
 				041975D52297667700BB9285 /* libGLEW.2.1.0.dylib in Frameworks */,
+				04A8E751229847D5006BBD0E /* libassimp.4.1.0.dylib in Frameworks */,
 				041975D72297673000BB9285 /* libSTB_IMAGE.a in Frameworks */,
 				041975C3229749C700BB9285 /* OpenGL.framework in Frameworks */,
 			);
@@ -152,6 +155,7 @@
 		041975BC2297465100BB9285 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04A8E750229847D5006BBD0E /* libassimp.4.1.0.dylib */,
 				041975D62297673000BB9285 /* libSTB_IMAGE.a */,
 				041975D022974FC900BB9285 /* assimp.lib */,
 				041975C822974B0400BB9285 /* libassimp.4.1.0.dylib */,

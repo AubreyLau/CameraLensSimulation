@@ -45,5 +45,7 @@ void main()
         BrightColor = vec4(result, 1.0);
     else
         BrightColor = vec4(0.0, 0.0, 0.0, 1.0);
+    
     FragColor = vec4(result, 1.0);
+  //   FragColor = BrightColor;
 }
