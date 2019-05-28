@@ -17,6 +17,16 @@ uniform Light lights[4];
 uniform sampler2D diffuseTexture;
 uniform vec3 viewPos;
 
+//Depth Value
+float near = 0.1;
+float far  = 100.0;
+float LinearizeDepth(float depth)
+{
+    float z = depth * 2.0 - 1.0; // back to NDC
+    return (2.0 * near * far) / (far + near - z * (far - near));
+}
+
+
 void main()
 {           
     vec3 color = texture(diffuseTexture, fs_in.TexCoords).rgb;
@@ -38,14 +48,18 @@ void main()
         lighting += result;
                 
     }
+     float depth = LinearizeDepth(gl_FragCoord.z) / far; // depth value
+    
     vec3 result = ambient + lighting;
     // check whether result is higher than some threshold, if so, output as bloom threshold color
     float brightness = dot(result, vec3(0.2126, 0.7152, 0.0722));
     if(brightness > 1.0)
-        BrightColor = vec4(result, 1.0);
+        BrightColor = vec4(result, depth);
     else
-        BrightColor = vec4(0.0, 0.0, 0.0, 1.0);
+        BrightColor = vec4(0.0, 0.0, 0.0, depth);
+
+   
+    FragColor = vec4(result, depth);
     
-    FragColor = vec4(result, 1.0);
-  //   FragColor = BrightColor;
+    
 }
