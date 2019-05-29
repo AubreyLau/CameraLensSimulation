@@ -22,14 +22,14 @@ void renderQuad();
 void renderCube();
 
 // settings
-const unsigned int SCR_WIDTH = 1280;
-const unsigned int SCR_HEIGHT = 720;
-bool bloom = true;
+const unsigned int SCR_WIDTH = 2560;
+const unsigned int SCR_HEIGHT = 1600;
+bool bloom = false;
 bool bloomKeyPressed = false;
 float exposure = 1.0f;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
+Camera camera(glm::vec3(0.0f, 5.0f, 5.0f));
 float lastX = (float)SCR_WIDTH / 2.0;
 float lastY = (float)SCR_HEIGHT / 2.0;
 bool firstMouse = true;
@@ -87,8 +87,14 @@ int main()
     Shader shaderBlur("shader/7.blur.vs", "shader/7.blur.fs");
     Shader shaderBloomFinal("shader/7.bloom_final.vs", "shader/7.bloom_final.fs");
     
-    
-    
+    //load models
+    //-----------
+     Model nanosuit("resources/objects/planet/planet.obj");
+    std::vector<glm::vec3> objectPositions;
+    objectPositions.push_back(glm::vec3(1.0,  0.05, 2.0));
+
+   // objectPositions.push_back(glm::vec3( 0.0,  -1.0,  0.0));
+
     
     
     // load textures
@@ -167,16 +173,16 @@ int main()
     // -------------
     // positions
     std::vector<glm::vec3> lightPositions;
-    lightPositions.push_back(glm::vec3( 0.0f, 0.5f,  1.5f));
-    lightPositions.push_back(glm::vec3(-4.0f, 0.5f, -3.0f));
-    lightPositions.push_back(glm::vec3( 3.0f, 0.5f,  1.0f));
-    lightPositions.push_back(glm::vec3(-.8f,  2.4f, -1.0f));
+  //  lightPositions.push_back(glm::vec3( 0.0f, 0.5f,  1.5f));
+  //  lightPositions.push_back(glm::vec3(-4.0f, 0.5f, -3.0f));
+  //  lightPositions.push_back(glm::vec3( 3.0f, 0.05f,  1.0f));
+    lightPositions.push_back(glm::vec3(-0.8f, 500.0f, -1.0f));
     // colors
     std::vector<glm::vec3> lightColors;
-    lightColors.push_back(glm::vec3(5.0f,   5.0f,  5.0f));
-    lightColors.push_back(glm::vec3(10.0f,  0.0f,  0.0f));
-    lightColors.push_back(glm::vec3(0.0f,   0.0f,  15.0f));
-    lightColors.push_back(glm::vec3(0.0f,   5.0f,  0.0f));
+   // lightColors.push_back(glm::vec3(5.0f,   5.0f,  5.0f));
+   // lightColors.push_back(glm::vec3(10.0f,  0.0f,  0.0f));
+   // lightColors.push_back(glm::vec3(18.0f,   18.0f,  15.0f));
+    lightColors.push_back(glm::vec3(120000.0f,   110000.0f,  105000.0f));
     
     
     // shader configuration
@@ -205,7 +211,8 @@ int main()
         
         // render
         // ------
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+       // glClearColor(0.2f, 0.28f, 0.40f, 1.0f);
+        glClearColor(0.43f, 0.53f, 0.66f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         // 1. render scene into floating point framebuffer
@@ -218,6 +225,20 @@ int main()
         shader.use();
         shader.setMat4("projection", projection);
         shader.setMat4("view", view);
+        
+        
+        
+     //   for (unsigned int i = 0; i < objectPositions.size(); i++)
+        {
+            model = glm::mat4(1.0f);
+            model = glm::translate(model, objectPositions[0]);
+            model = glm::scale(model, glm::vec3(0.5f));
+            shader.setMat4("model", model);
+            nanosuit.Draw(shader);
+        }
+        
+        
+        
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, woodTexture);
         // set lighting uniforms
@@ -227,13 +248,16 @@ int main()
             shader.setVec3("lights[" + std::to_string(i) + "].Color", lightColors[i]);
         }
         shader.setVec3("viewPos", camera.Position);
+        
         // create one large cube that acts as the floor
-        model = glm::mat4(1.0f);
+      /*  model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0));
         model = glm::scale(model, glm::vec3(12.5f, 0.5f, 12.5f));
         shader.setMat4("model", model);
         shader.setMat4("model", model);
         renderCube();
+      */
+        
         // then create multiple cubes as the scenery
         glBindTexture(GL_TEXTURE_2D, containerTexture);
         model = glm::mat4(1.0f);
@@ -242,36 +266,6 @@ int main()
         shader.setMat4("model", model);
         renderCube();
         
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 1.0));
-        model = glm::scale(model, glm::vec3(0.5f));
-        shader.setMat4("model", model);
-        renderCube();
-        
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 2.0));
-        model = glm::rotate(model, glm::radians(60.0f), glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
-        shader.setMat4("model", model);
-        renderCube();
-        
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 2.7f, 4.0));
-        model = glm::rotate(model, glm::radians(23.0f), glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
-        model = glm::scale(model, glm::vec3(1.25));
-        shader.setMat4("model", model);
-        renderCube();
-        
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(-2.0f, 1.0f, -3.0));
-        model = glm::rotate(model, glm::radians(124.0f), glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
-        shader.setMat4("model", model);
-        renderCube();
-        
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(-3.0f, 0.0f, 0.0));
-        model = glm::scale(model, glm::vec3(0.5f));
-        shader.setMat4("model", model);
-        renderCube();
         
         // finally show all the light sources as bright cubes
         shaderLight.use();
@@ -282,7 +276,7 @@ int main()
         {
             model = glm::mat4(1.0f);
             model = glm::translate(model, glm::vec3(lightPositions[i]));
-            model = glm::scale(model, glm::vec3(0.25f));
+            model = glm::scale(model, glm::vec3(0.5f));
             shaderLight.setMat4("model", model);
             shaderLight.setVec3("lightColor", lightColors[i]);
             renderCube();
@@ -292,7 +286,7 @@ int main()
         // 2. blur bright fragments with two-pass Gaussian Blur
         // --------------------------------------------------
         bool horizontal = true, first_iteration = true;
-        unsigned int amount = 10;
+        unsigned int amount = 1;
         shaderBlur.use();
         for (unsigned int i = 0; i < amount; i++)
         {

@@ -14,6 +14,7 @@ void main()
      vec3 result = texture(image, TexCoords).rgb * weight[0];
     float depthValue = texture(image, TexCoords).a;
     //
+    /*
      if(horizontal)
      {
          for(int i = 1; i < 5; ++i)
@@ -33,8 +34,8 @@ void main()
         
          }
      }
-    
-     FragColor = vec4(vec3(depthValue), depthValue);
+    */
+     FragColor = vec4(result, depthValue);
     
     //  FragColor = vec4(1,0,0, 1.0);
 }
